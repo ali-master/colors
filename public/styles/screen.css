@@ -1,0 +1,154 @@
+@import 'base.css' screen, projection;
+@import 'dice.css' screen;
+@import 'modal.css';
+
+.game{
+    margin: 20px;
+    position: relative;
+}
+.layouts{
+    position: relative;
+    *zoom: 1;
+    z-index: 2;
+    text-align: center;
+}
+.row{
+    display: block;
+}
+.cell,
+.user{
+    display: inline-block;
+    background: #f2f2f2;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border: 1px solid #EEE;
+    z-index: 3;
+    vertical-align: top;
+    border-radius: 50%;
+}
+div.game > div > div:nth-child(2) > div:nth-child(1):before,
+div.game > div.layouts > div:nth-last-child(1) > div:nth-last-child(1):before{
+    color: #FFF;
+    display: inline-block;
+    font-family: "Ionicons";
+    font-size: 25px;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    margin-right: 0px;
+    margin-top: 2px;
+}
+div.game > div > div:nth-child(2) > div:nth-child(1){
+    background-color: #2DBE60;
+}
+div.game > div > div:nth-child(2) > div:nth-child(1):before{
+    content: "\f448";
+    color: #FFF;
+}
+div.game > div.layouts > div:nth-last-child(1) > div:nth-last-child(1){
+    background: #fecc44;
+}
+div.game > div.layouts > div:nth-last-child(1) > div:nth-last-child(1):before{
+    content: "\f2f6";
+    font-size: 22px;
+    margin-top: 4px;
+    margin-right: 0.0;
+    margin-left: 2px;
+}
+}
+.cell:nth-child(even){
+    background: #ececec;
+}
+.cell.Snakes{
+    background-color: #feb5b8;
+    border-color: #ff8a8e;
+
+    background-image: url(../images/snakes.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px 24px;
+}
+.user{
+    z-index: 4;
+    position: absolute;
+    left: -100px;
+    top: 100%;
+    background-color: transparent;
+    background-color: #FFF;
+    border-color: #1fae52;
+    display: none;
+
+    background-image: url(../images/super_mario.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 22px 29px;
+}
+
+.detailBox{
+    height: 40px;
+}
+.msgBox{
+    padding: 5px;
+    margin-bottom: 20px;
+    line-height: 18px;
+    color: #333;
+    background: #ffffe0;
+    border: 1px solid #e6db55;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    transition: all 0.5s ease-in-out 0s;
+}
+.msgBox.fail{
+    border-color: #fe8f6b!important;
+    background: #ffe2d9!important;
+}
+.msgBox.success{
+    border-color: #47AF41!important;
+    background: #D2FFCF!important;
+}
+
+h3{
+    height: 42px;
+    color: #40454D;
+    font-size: 18px;
+    font-weight: normal;
+    border-bottom: 2px solid #E42634;
+    display: inline-block;
+    line-height: 40px !important;
+    cursor: default;
+    margin-top: 0;
+}
+
+.info{}
+.info .row-view{
+    height: 40px;
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+    color: #555;
+    cursor: default;
+    border-bottom: 1px solid #fff;
+    background: #f5f5f5;
+}
+.info .row-view > DIV{
+    display: inline-block;
+    width: 49%;
+    line-height: 40px;
+    vertical-align: middle;
+}
+.info .row-view .content{
+    background: #e6f3f8;
+    border-right: 1px solid #7fcfec;
+    color: #249eca;
+    height: 40px;
+}
+.info .row-view .content span{direction: rtl;}
