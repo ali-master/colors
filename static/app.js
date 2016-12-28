@@ -1,6 +1,12 @@
 'use strict';
 
-import SnakesAndLadders from "./SnakesAndLadders/";
+import RGB from './modules/RGB';
+import Hex from './modules/Hex';
+import Decimal from './modules/Decimal';
+import Colors from './modules/Colors';
 
-const Game = new SnakesAndLadders();
-Game.init();
+class colors{
+	constructor() {
+		this.prefix = "To";
+	}
+}

@@ -1,154 +1,208 @@
-@import 'base.css' screen, projection;
-@import 'dice.css' screen;
-@import 'modal.css';
-
-.game{
-    margin: 20px;
-    position: relative;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.layouts{
-    position: relative;
-    *zoom: 1;
-    z-index: 2;
-    text-align: center;
+html,
+body {
+  height: 100%;
 }
-.row{
-    display: block;
+body,
+input {
+  font: 300 18px/1.2 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  background: #ffd454;
 }
-.cell,
-.user{
-    display: inline-block;
-    background: #f2f2f2;
-    width: 30px;
-    height: 30px;
-    margin: 1px;
-    border: 1px solid #EEE;
-    z-index: 3;
-    vertical-align: top;
-    border-radius: 50%;
+a {
+  text-decoration: none;
+  color: #222;
 }
-div.game > div > div:nth-child(2) > div:nth-child(1):before,
-div.game > div.layouts > div:nth-last-child(1) > div:nth-last-child(1):before{
-    color: #FFF;
-    display: inline-block;
-    font-family: "Ionicons";
-    font-size: 25px;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    text-rendering: auto;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    margin-right: 0px;
-    margin-top: 2px;
+a:hover {
+  color: #111;
 }
-div.game > div > div:nth-child(2) > div:nth-child(1){
-    background-color: #2DBE60;
+a:focus {
+  outline: none;
 }
-div.game > div > div:nth-child(2) > div:nth-child(1):before{
-    content: "\f448";
-    color: #FFF;
+input {
+  display: block;
+  width: 335px;
+  font-size: 34px;
+  line-height: 44px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.4);
+  padding: 5px 0;
+  border-radius: 0;
 }
-div.game > div.layouts > div:nth-last-child(1) > div:nth-last-child(1){
-    background: #fecc44;
+input:focus {
+  border-bottom-color: #000;
+  outline: none;
 }
-div.game > div.layouts > div:nth-last-child(1) > div:nth-last-child(1):before{
-    content: "\f2f6";
-    font-size: 22px;
-    margin-top: 4px;
-    margin-right: 0.0;
-    margin-left: 2px;
+.title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
+#wrap {
+  width: 340px;
+  height: 125px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -62.5px -170px;
 }
-.cell:nth-child(even){
-    background: #ececec;
+#hex {
+  margin-bottom: 15px;
 }
-.cell.Snakes{
-    background-color: #feb5b8;
-    border-color: #ff8a8e;
-
-    background-image: url(../images/snakes.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 16px 24px;
+.btn {
+  display: inline-block;
+  max-width: 100%;
+  height: 31px;
+  font: bold 13px/29px "Helvetica Neue", Helvetica, sans-serif;
+  color: #222;
+  background-color: transparent;
+  border: 1px solid #222;
+  padding: 0 8px;
+  border-radius: 3px;
 }
-.user{
-    z-index: 4;
-    position: absolute;
-    left: -100px;
-    top: 100%;
-    background-color: transparent;
-    background-color: #FFF;
-    border-color: #1fae52;
-    display: none;
-
-    background-image: url(../images/super_mario.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 22px 29px;
+.btn:focus,
+.btn:hover,
+.btn:active {
+  background-color: rgba(0, 0, 0, 0.05);
 }
-
-.detailBox{
-    height: 40px;
+.btn svg {
+  position: relative;
+  top: 2px;
+  margin-right: 1px;
+  fill: #222;
 }
-.msgBox{
-    padding: 5px;
-    margin-bottom: 20px;
-    line-height: 18px;
-    color: #333;
-    background: #ffffe0;
-    border: 1px solid #e6db55;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    transition: all 0.5s ease-in-out 0s;
+.feedback a {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
-.msgBox.fail{
-    border-color: #fe8f6b!important;
-    background: #ffe2d9!important;
+.tweet {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
 }
-.msgBox.success{
-    border-color: #47AF41!important;
-    background: #D2FFCF!important;
+.logo {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 30px;
+  height: 46px;
+  margin-left: -15px;
 }
-
-h3{
-    height: 42px;
-    color: #40454D;
-    font-size: 18px;
-    font-weight: normal;
-    border-bottom: 2px solid #E42634;
-    display: inline-block;
-    line-height: 40px !important;
-    cursor: default;
-    margin-top: 0;
+.oh a {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 60px;
+  font-weight: 200;
+  line-height: 80px;
+  text-align: center;
+  z-index: 1;
 }
-
-.info{}
-.info .row-view{
-    height: 40px;
-    font-size: 13px;
-    text-align: center;
-    vertical-align: middle;
-    color: #555;
-    cursor: default;
-    border-bottom: 1px solid #fff;
-    background: #f5f5f5;
+.oh a span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  margin-top: -40px;
 }
-.info .row-view > DIV{
-    display: inline-block;
-    width: 49%;
+.light {
+  color: #222!important;
+}
+.light input {
+  color: #222!important;
+  border-bottom-color: rgba(0, 0, 0, 0.4);
+}
+.light input:focus {
+  border-bottom-color: #000;
+}
+.dark .c {
+  color: #fff;
+}
+.dark .c:hover {
+  color: #ccc;
+}
+.dark input {
+  color: #fff!important;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+.dark input:focus {
+  border-bottom-color: #fff;
+}
+.dark .btn {
+  color: #fff;
+  border-color: #fff;
+}
+.dark .btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.dark svg {
+  fill: #fff;
+}
+.dark ::-webkit-input-placeholder {
+  color: #fff!important;
+}
+.dark :-moz-placeholder {
+  color: #fff!important;
+}
+.dark ::-moz-placeholder {
+  color: #fff!important;
+}
+.dark :-ms-input-placeholder {
+  color: #fff!important;
+}
+::-webkit-input-placeholder {
+  color: #222;
+}
+:-moz-placeholder {
+  color: #222;
+}
+::-moz-placeholder {
+  color: #222;
+}
+:-ms-input-placeholder {
+  color: #222;
+}
+@media only screen and (max-width: 400px) {
+  input {
+    width: 280px;
+    font-size: 28px;
     line-height: 40px;
-    vertical-align: middle;
+  }
+  #wrap {
+    width: 280px;
+    margin-left: -140px;
+  }
+  .c {
+    top: 15px;
+    left: 15px;
+  }
+  .feedback a {
+    top: 15px;
+    right: 15px;
+  }
+  .tweet {
+    bottom: 15px;
+    left: 15px;
+  }
+  .logo {
+    bottom: 15px;
+  }
 }
-.info .row-view .content{
-    background: #e6f3f8;
-    border-right: 1px solid #7fcfec;
-    color: #249eca;
-    height: 40px;
-}
-.info .row-view .content span{direction: rtl;}

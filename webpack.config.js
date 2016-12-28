@@ -24,10 +24,9 @@ module.exports = {
 				test: /\.jsx?$/,
 				loader: 'babel',
 				execlude: /node_modules|bower_components/,
-				query: {
-					"presets": ["es2015"],
-					"plugins": ["transform-class-properties"]
-				}
+				// query: {
+				// 	"presets": ["es2015"]
+				// }
 			}
 		]
 	},

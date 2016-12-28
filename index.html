@@ -1,58 +1,64 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en-us" xml:lang="en-us">
 <head>
-	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="./public/styles/screen.css" media="screen, projection" type="text/css" />
-	<title>Snakes and ladders game</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="index, nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  	<meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, height=device-height" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="HEX to RGB">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" type="text/css">
+	<meta name="description" content="A simple tool for converting HEX values to RGB and vice versa.">
+	<meta name="keywords" content="hex, hexadecimal, rgb, converter, hex to rgb, hexadecimal to rgb, hex to rgb converter, rgb to hex, rgb to hex converter, convert hex to rgb, convert rgb to hex, hex to rgb conversion, rgb to hex conversion, hex converter, rgb converter, simple hex to rgb converter">
+
+	<meta property="og:title" content="HEX to RGB Converter" />
+	<meta property="og:image" content="./public/images/apple-touch-icon.png" />
+	<meta property="og:description" content="A simple tool for converting HEX values to RGB and vice versa." />
+	<meta property="og:url" content="https://colorinfo.ir" />
+
+	<title>HEX to RGB Converter</title>
+
+	<link rel="dns-prefetch" href="//ajax.googleapis.com">
+
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="./public/images/apple-touch-icon-57.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="./public/images/apple-touch-icon-72.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="./public/images/apple-touch-icon-114.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="./public/images/apple-touch-icon-144.png">
+
+	<link rel="shortcut icon" href="./public/images/favicon.png">
+
+	<link rel="stylesheet" type="text/css" href="./public/fonts/fonts.css?v=4">
+	<link rel="stylesheet" href="./public/styles/screen.css?v=1.0.0">
 </head>
 <body>
-	<div class="form form--center">
-		<div class="form--center-head">
-			<p class="slogan">بازی مار و پله</p>
-		</div>
-		<div class="content-holder container-holder">
-			<div class="content-inner">
-				<p align="justify">برای بازی٬ ابتدا بر روی دکمه شروع کلید کنید</p>
-				<hr />
-
-				<div class="game">
-					<div class="detailBox"></div>
-					<div class="layouts">
-						<div class="user"></div>
-					</div>
-				</div>
-
-				<a href="#" class="start button navy full">شروع</a>
-
-				<div class="dice-wrapper">
-				    <div class="cubic">
-				        <div class="front"></div>
-				        <div class="right"></div>
-				        <div class="bottom"></div>
-				        <div class="top"></div>
-				        <div class="left"></div>
-				        <div class="back"></div>
-				    </div>
-				</div>
-			</div>
-
-		</div>
-		<div class="status"></div>
-		<div class="form--center-foot">
-			<p>
-				<a href="https://github.com/ali-master/SnakesAndLadders" tabindex="-1" hidefocus="true" class="dotted">Github</a>
-				<a href="https://github.com/ali-master/" tabindex="-1" hidefocus="true" class="dotted">Ali Master</a>
-            </p>
-        </div>
+	<div class="feedback">
+		<a class="typeform-share btn" href="https://jamie123.typeform.com/to/JaJqVD" data-mode="1" target="_blank">Leave Feedback</a>
+		<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
 	</div>
 
-	<script type="text/javascript" src="./public/scripts/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="./public/scripts/app.min.js"></script>
+	<a class="title" href="/" hidefocus="true" tabindex="-1">color info</a>
+
+	<div id="wrap">
+		<input id="hex" type="text" placeholder="hex" autocomplete="off">
+		<input id="rgb" type="text" placeholder="rgb" autocomplete="off">
+	</div>
+
+	<a class="tweet btn" href="https://twitter.com/intent/tweet?text=HEX%20to%20RGB%20Converter%20by%20@alitorki_24&url=http://colorinfo.ir">
+		<svg width="17px" height="13px" viewBox="0 0 30 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<path d="M29.9412896,2.83945075 C28.8553433,3.32117015 27.6882269,3.64678209 26.4632955,3.79300299 C27.7133731,3.04355821 28.6737313,1.85688358 29.125791,0.442746269 C27.9556657,1.1367403 26.6597373,1.64066866 25.2803463,1.91219104 C24.1757731,0.735259701 22.6019463,0 20.860191,0 C16.9514149,0 14.078006,3.64771343 14.9614209,7.43641791 C9.92858507,7.18395224 5.46644776,4.77299104 2.47977313,1.10944478 C0.893480597,3.83061493 1.65696716,7.39242985 4.35678806,9.1942209 C3.36426269,9.16284179 2.43026866,8.89038806 1.61398209,8.4366806 C1.54828657,11.2450388 3.55547463,13.8671284 6.47129552,14.4509373 C5.61904478,14.6828418 4.68555224,14.7359284 3.73672836,14.554603 C4.50716418,16.9617672 6.74568358,18.7098269 9.39642985,18.7599761 C6.84426269,20.7554149 3.63442388,21.6437731 0.424871642,21.2666507 C3.10470448,22.9860537 6.28517015,23.9890388 9.70964776,23.987391 C20.9525373,23.987391 27.3045134,14.4912 26.9216597,5.97413731 C28.1028896,5.12317612 29.1317373,4.05571343 29.9412896,2.83945075 L29.9412896,2.83945075 Z"></path>
+		</svg>
+		<span>Tweet</span>
+	</a>
+
+	<a class="logo" href="http://alimaster.blog.ir/" tabindex="-1" hidefocus="true">
+		<svg width="30px" height="46px" viewBox="0 0 30 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#222">
+			<path d="M28,0 L0,26 L10.0003418,26 L1.99885254,46 L30,20.0034485 L20.0003906,20.0034485 L28,0 Z"></path>
+		</svg>
+	</a>
+
+	<script src="./public/scripts/jquery-2.2.0.min.js"></script>
+	<script src="./public/scripts/app.min.js?v=1.0.0" async></script>
 </body>
 </html>
