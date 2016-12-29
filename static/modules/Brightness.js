@@ -1,11 +1,10 @@
 'use strict';
 
-const brightness = (color) => {
-	let r, // red
-		g, // green
-		b; // blue
+import getBackgroundColor from './getBackgroundColor';
 
-	r = g = b = 0;
+const brightness = ($elm) => {
+	let r,g,b,brightness;
+	let color = getBackgroundColor($elm);
 
 	if (color.match(/^rgb/)) {
 		color = color.match(/rgba?\(([^)]+)\)/)[1];
@@ -23,7 +22,15 @@ const brightness = (color) => {
 		b = parseInt(color[3] + color[3], 16);
 	}
 
-	return (r * 299 + g * 587 + b * 114) / 1000;
+    brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    
+    if (brightness < 125) {
+    	// white text
+    	$elm.removeClass("light").addClass("dark");
+    } else {
+    	// black text
+    	$elm.removeClass("dark").addClass("light");
+    }
 }
 
 export default brightness;

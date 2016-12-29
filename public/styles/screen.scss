@@ -1,3 +1,6 @@
+@charset "utf-8";
+@import "compass/css3";
+
 * {
   margin: 0;
   padding: 0;
@@ -7,25 +10,33 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-html,
-body {
+
+html {
   height: 100%;
 }
-body,
+
+body {
+  height: 100%;
+  font: 300 18px/1.2 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  background: #fecc44;
+}
+
 input {
   font: 300 18px/1.2 'Gotham SSm A', 'Gotham SSm B', sans-serif;
   background: #fecc44;
 }
+
 a {
   text-decoration: none;
   color: #222;
+  &:hover {
+    color: #111;
+  }
+  &:focus {
+    outline: none;
+  }
 }
-a:hover {
-  color: #111;
-}
-a:focus {
-  outline: none;
-}
+
 input {
   display: block;
   width: 335px;
@@ -36,12 +47,13 @@ input {
   border-bottom: 1px dotted rgba(0, 0, 0, 0.4);
   padding: 5px 0;
   -webkit-border-radius: 0;
-          border-radius: 0;
+  border-radius: 0;
+  &:focus {
+    border-bottom-color: #000;
+    outline: none;
+  }
 }
-input:focus {
-  border-bottom-color: #000;
-  outline: none;
-}
+
 .title {
   position: absolute;
   top: 20px;
@@ -52,6 +64,7 @@ input:focus {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
 #wrap {
   width: 340px;
   height: 125px;
@@ -60,9 +73,11 @@ input:focus {
   left: 50%;
   margin: -62.5px -170px;
 }
+
 #hex {
   margin-bottom: 15px;
 }
+
 .btn {
   display: inline-block;
   max-width: 100%;
@@ -73,24 +88,24 @@ input:focus {
   border: 1px solid #222;
   padding: 0 8px;
   -webkit-border-radius: 3px;
-          border-radius: 3px;
+  border-radius: 3px;
+  &:focus, &:hover, &:active {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  svg {
+    position: relative;
+    top: 2px;
+    margin-right: 1px;
+    fill: #222;
+  }
 }
-.btn:focus,
-.btn:hover,
-.btn:active {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-.btn svg {
-  position: relative;
-  top: 2px;
-  margin-right: 1px;
-  fill: #222;
-}
+
 .tweet {
   position: absolute;
   left: 20px;
   bottom: 20px;
 }
+
 .logo {
   position: absolute;
   left: 50%;
@@ -99,6 +114,7 @@ input:focus {
   height: 46px;
   margin-left: -15px;
 }
+
 .oh a {
   display: block;
   position: absolute;
@@ -111,71 +127,59 @@ input:focus {
   line-height: 80px;
   text-align: center;
   z-index: 1;
+  span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    margin-top: -40px;
+  }
 }
-.oh a span {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  margin-top: -40px;
-}
+
 .light {
-  color: #222!important;
+  color: #222 !important;
+  input {
+    color: #222 !important;
+    border-bottom-color: rgba(0, 0, 0, 0.4);
+    &:focus {
+      border-bottom-color: #000;
+    }
+  }
 }
-.light input {
-  color: #222!important;
-  border-bottom-color: rgba(0, 0, 0, 0.4);
+
+.dark {
+  .title {
+    color: #fff;
+    &:hover {
+      color: #ccc;
+    }
+  }
+  input {
+    color: #fff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.4);
+    &:focus {
+      border-bottom-color: #fff;
+    }
+  }
+  .btn {
+    color: #fff;
+    border-color: #fff;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+  svg {
+    fill: #fff;
+  }
+  ::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
+    color: #fff !important;
+  }
 }
-.light input:focus {
-  border-bottom-color: #000;
-}
-.dark .title {
-  color: #fff;
-}
-.dark .title:hover {
-  color: #ccc;
-}
-.dark input {
-  color: #fff!important;
-  border-bottom-color: rgba(255, 255, 255, 0.4);
-}
-.dark input:focus {
-  border-bottom-color: #fff;
-}
-.dark .btn {
-  color: #fff;
-  border-color: #fff;
-}
-.dark .btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-.dark svg {
-  fill: #fff;
-}
-.dark ::-webkit-input-placeholder {
-  color: #fff!important;
-}
-.dark :-moz-placeholder {
-  color: #fff!important;
-}
-.dark ::-moz-placeholder {
-  color: #fff!important;
-}
-.dark :-ms-input-placeholder {
-  color: #fff!important;
-}
-::-webkit-input-placeholder {
+
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
   color: #222;
 }
-:-moz-placeholder {
-  color: #222;
-}
-::-moz-placeholder {
-  color: #222;
-}
-:-ms-input-placeholder {
-  color: #222;
-}
+
 @media only screen and (max-width: 400px) {
   input {
     width: 280px;
@@ -189,6 +193,10 @@ input:focus {
   .title {
     top: 15px;
     left: 15px;
+  }
+  .feedback a {
+    top: 15px;
+    right: 15px;
   }
   .tweet {
     bottom: 15px;

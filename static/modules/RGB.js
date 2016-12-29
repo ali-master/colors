@@ -4,7 +4,7 @@ import Decimal from './Decimal';
 
 const colorToRGB = (color) => {
     color = isNaN(color) ? Decimal(color) : color;
-    if (!color)
+    if (!color || color.length == 0)
         return null;
 
     return 'rgb(' + (color >> 16 & 255) + ',' + (color >> 8 & 255) + ',' + (color & 255) + ')'

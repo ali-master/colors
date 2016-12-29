@@ -4,8 +4,6 @@ import RGB from './modules/RGB';
 import Hex from './modules/Hex';
 import Decimal from './modules/Decimal';
 import Brightness from './modules/Brightness';
-import getBackgroundColor from './modules/getBackgroundColor';
-import Colors from './modules/Colors';
 
 class colors{
 	constructor() {
@@ -21,8 +19,8 @@ class colors{
 
 	rgb() {
 		const self = this;
-		self.$rgb.bind('blur keyup', function(e){
-			self.$color = $.rgbHex($('#rgb').val());
+		self.$rgb.bind('blur keyup', (e) => {
+			self.$color = Hex( $.trim($('#rgb').val()) );
 
 			if(self.$color){
 				$('#hex').val(self.$color);
@@ -31,6 +29,7 @@ class colors{
 			}
 
 			$('body').css('background-color', self.$hex.val());
+			Brightness($('body'));
 
 			if(e.keyCode == 13){
 				self.$hex.select();
@@ -40,8 +39,8 @@ class colors{
 
 	hex() {
 		const self = this;
-		self.$hex.bind('blur keyup', function(e){
-			self.$color = Hex($('#hex').val());
+		self.$hex.bind('blur keyup', (e) => {
+			self.$color = Hex( $.trim($('#hex').val()) );
 
 			if(self.$color){
 				$('#rgb').val(self.$color);
@@ -50,6 +49,7 @@ class colors{
 			}
 
 			$('body').css('background-color', self.$rgb.val());
+			Brightness($('body'));
 
 			if(e.keyCode == 13){
 				self.$rgb.select();
@@ -59,20 +59,8 @@ class colors{
 }
 
 $(window).load(function(){
-	$('.tweet').click(function(e){
-		var width  = 575,
-        	height = 400,
-        	left   = ($(window).width() - width) / 2,
-        	top    = ($(window).height() - height) / 2,
-        	url    = this.href,
-        	opts   = 'status=1' +
-                 	 ',width='  + width  +
-                 	 ',height=' + height +
-                 	 ',top='    + top    +
-                 	 ',left='   + left;
+	const color = new colors();
 
-		window.open(url, 'twitter', opts);
-
-		return false;
-	});
+	color.hex();
+	color.rgb();
 });
