@@ -40,7 +40,7 @@ class colors{
 	hex() {
 		const self = this;
 		self.$hex.bind('blur keyup', (e) => {
-			self.$color = Hex( $.trim($('#hex').val()) );
+			self.$color = RGB( $.trim($('#hex').val()) );
 
 			if(self.$color){
 				$('#rgb').val(self.$color);
